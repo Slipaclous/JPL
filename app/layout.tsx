@@ -9,8 +9,8 @@ import Navigation from '../components/Navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Cabinet de Podologie - Dr. Marie Martin',
-  description: 'Cabinet de podologie à Paris - Soins et semelles orthopédiques par Dr. Marie Martin',
+  title: 'Cabinet de Podologie - Justine Leonardi',
+  description: 'Cabinet de podologie à Paris - Soins et semelles orthopédiques par Justine Leonardi',
 };
 
 export default function RootLayout({
@@ -87,7 +87,7 @@ export default function RootLayout({
             </div>
 
             <div className="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
-              <p>© {new Date().getFullYear()} Cabinet de Podologie Dr. Marie Martin. Tous droits réservés.</p>
+              <p>© {new Date().getFullYear()} Cabinet de Podologie Justine Leonardi. Tous droits réservés.</p>
             </div>
           </div>
         </footer>
