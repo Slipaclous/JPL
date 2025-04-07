@@ -1,8 +1,10 @@
+// app/layout.tsx - Fichier layout principal (Server Component)
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Footprints, Calendar, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Link from 'next/link';
-import { Footprints, Calendar, Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react';
+import Navigation from '../components/Navigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,42 +22,18 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <header className="border-b sticky top-0 bg-background/95 backdrop-blur-sm z-50">
-          <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2 font-semibold text-xl group">
-              <Footprints className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
-              <span>Justine Leonardi</span>
-            </Link>
-            <div className="space-x-8">
-              <Link href="/" className="nav-link">
-                Accueil
-              </Link>
-              <Link href="/prestations" className="nav-link">
-                Prestations
-              </Link>
-              <Link href="/contact" className="nav-link">
-                Contact
-              </Link>
-              <Link 
-                href="https://rosa.be/fr/hp/justine-leonardi/" 
-                target="_blank"
-                className="btn-primary"
-              >
-                <Calendar className="mr-2 h-5 w-5" />
-                Prendre RDV
-              </Link>
-            </div>
-          </nav>
+          <Navigation />
         </header>
         
         {children}
         
         <footer className="bg-primary text-white pt-16 pb-8">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
               <div>
                 <div className="flex items-center space-x-2 mb-6">
                   <Footprints className="h-8 w-8" />
-                  <span className="text-xl font-semibold">Dr. Marie Martin</span>
+                  <span className="text-xl font-semibold">Justine Leonardi</span>
                 </div>
                 <p className="text-white/80">
                   Cabinet de podologie spécialisé dans les soins des pieds et la conception de semelles orthopédiques sur mesure.
@@ -70,7 +48,6 @@ export default function RootLayout({
                 <address className="text-white/80 not-italic">
                 <p className="">Rue Docteur Colson 23, 1430 Quenast</p>
                 <p className="">Chaussée de Bruxelles 475, 7850 Enghien</p>
-                
                 </address>
               </div>
 
@@ -89,16 +66,16 @@ export default function RootLayout({
               <div>
                 <h3 className="font-semibold text-lg mb-4">Contact</h3>
                 <div className="space-y-4">
-                  <a href="tel:0123456789" className="footer-link text-white/80 flex items-center hover:text-white">
+                  <a href="tel:+32493938982" className="footer-link text-white/80 flex items-center hover:text-white">
                     <Phone className="h-5 w-5 mr-2" />
                     +32493938982
                   </a>
-                  <a href="mailto:contact@podologue.fr" className="footer-link text-white/80 flex items-center hover:text-white">
+                  <a href="mailto:leonardi.podo@gmail.com" className="footer-link text-white/80 flex items-center hover:text-white">
                     <Mail className="h-5 w-5 mr-2" />
                     leonardi.podo@gmail.com
                   </a>
                   <Link 
-                    href="https://exemple-rdv.fr"
+                    href="https://rosa.be/fr/hp/justine-leonardi/"
                     target="_blank"
                     className="btn-secondary bg-white/10 border-white hover:bg-white/20 text-white"
                   >
