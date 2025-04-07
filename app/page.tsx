@@ -172,45 +172,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#403737] text-[#EBE6E4] py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            <div className="text-center md:text-left">
-              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Cabinet de Podologie</h3>
-              <p className="font-light text-sm md:text-base">
-                Justine Leonardi<br />
-                Podologue diplômée
-              </p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Liens rapides</h3>
-              <div className="space-y-2">
-                <Link href="/" className="block text-sm md:text-base hover:text-white/80 transition-colors">Accueil</Link>
-                <Link href="/prestations" className="block text-sm md:text-base hover:text-white/80 transition-colors">Prestations</Link>
-                <Link href="https://rosa.be/fr/hp/justine-leonardi/" target="_blank" className="block text-sm md:text-base hover:text-white/80 transition-colors">Prendre RDV</Link>
-              </div>
-            </div>
-            <div className="text-center md:text-right">
-              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Suivez-moi</h3>
-              <div className="flex justify-center md:justify-end space-x-4">
-                <a href="https://www.instagram.com/justineleonardi.podo/" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base hover:text-white/80 transition-colors">
-                  Instagram
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100063517123456" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base hover:text-white/80 transition-colors">
-                  Facebook
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
-            <p className="text-sm text-white/60">
-              © {new Date().getFullYear()} Justine Leonardi - Tous droits réservés
-            </p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
