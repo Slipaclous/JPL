@@ -119,11 +119,11 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative max-w-sm mx-auto"
             >
               <div className="aspect-[3/4] relative z-10 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                  src="/img/justine.jpg"
                   alt="Justine Leonardi"
                   className="w-full h-full object-cover"
                 />
