@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -86,7 +86,7 @@ export default function Prestations() {
                 key={service.id}
                 layoutId={`card-${service.id}`}
                 onClick={() => setSelectedService(service)}
-                className="group cursor-pointer"
+                className="group cursor-pointer relative"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <motion.img
@@ -109,6 +109,14 @@ export default function Prestations() {
                     >
                       {service.shortDesc}
                     </motion.p>
+                  </div>
+                  {/* Indicateur de cliquabilité */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowRight className="w-8 h-8 text-white" />
+                  </div>
+                  {/* Indicateur pour mobile */}
+                  <div className="absolute top-4 right-4 md:hidden">
+                    <ArrowRight className="w-8 h-8 text-white/80" />
                   </div>
                 </div>
               </motion.div>
