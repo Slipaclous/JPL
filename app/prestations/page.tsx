@@ -4,7 +4,16 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
 
-const services = [
+interface Service {
+  id: string;
+  title: string;
+  shortDesc: string;
+  description: string;
+  image: string;
+  price: string;
+}
+
+const services: Service[] = [
   {
     id: 'soin-pieds',
     title: "Soin des pieds",
@@ -64,7 +73,7 @@ const services = [
 ];
 
 export default function Prestations() {
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
     <main className="min-h-screen bg-[#EBE6E4]/10">
