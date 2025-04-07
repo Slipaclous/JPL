@@ -32,19 +32,19 @@ export default function Home() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-[#EBE6E4]"
+            className="text-[#EBE6E4] text-center md:text-left"
           >
-            <h1 className="text-4xl md:text-6xl mb-6 tracking-wide font-light">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl mb-4 md:mb-6 tracking-wide font-light">
               Podologue<br/>
-              <span className="text-white">Leonardi Justine</span>
+              <span className="text-white">Justine Leonardi</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 font-light text-[#EBE6E4]/80 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 font-light text-[#EBE6E4]/80 leading-relaxed max-w-xl mx-auto md:mx-0">
               Des soins personnalisés pour vos pieds par une professionnelle expérimentée
             </p>
             <Link 
               href="https://rosa.be/fr/hp/justine-leonardi/"
               target="_blank"
-              className="inline-flex items-center px-8 py-3 bg-[#EBE6E4] text-[#403737] text-sm uppercase tracking-widest hover:bg-white transition-all duration-300 hover:shadow-lg"
+              className="inline-flex items-center px-6 sm:px-8 py-3 bg-[#EBE6E4] text-[#403737] text-sm uppercase tracking-widest hover:bg-white transition-all duration-300 hover:shadow-lg"
             >
               Prendre RDV
             </Link>
@@ -53,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div 
             initial="initial"
@@ -63,7 +63,7 @@ export default function Home() {
               initial: { opacity: 0 },
               animate: { opacity: 1, transition: { staggerChildren: 0.2 } }
             }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           >
             {[
               {
@@ -90,17 +90,17 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={fadeIn}
-                className="group cursor-pointer"
+                className="group cursor-pointer relative"
                 onClick={() => window.location.href = '/prestations'}
               >
-                <div className="aspect-[4/3] mb-6 overflow-hidden bg-[#EBE6E4]/20">
+                <div className="aspect-[4/3] mb-4 md:mb-6 overflow-hidden bg-[#EBE6E4]/20">
                   <img 
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg font-light tracking-wider mb-2 text-[#403737] group-hover:text-[#403737]/80 transition-colors">
+                <h3 className="text-base md:text-lg font-light tracking-wider mb-2 text-[#403737] group-hover:text-[#403737]/80 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm text-[#403737]/60">{service.description}</p>
@@ -111,9 +111,9 @@ export default function Home() {
       </section>
 
       {/* À propos */}
-      <section className="py-24 bg-[#EBE6E4]/10">
+      <section className="py-16 md:py-24 bg-[#EBE6E4]/10">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -135,14 +135,15 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="text-center md:text-left"
             >
-              <h2 className="text-2xl font-light tracking-widest uppercase mb-8 text-[#403737]">À Propos</h2>
-              <p className="text-lg font-light leading-relaxed text-[#403737]/80 mb-8">
+              <h2 className="text-xl md:text-2xl font-light tracking-widest uppercase mb-6 md:mb-8 text-[#403737]">À Propos</h2>
+              <p className="text-base md:text-lg font-light leading-relaxed text-[#403737]/80 mb-6 md:mb-8">
                 Diplômée d'un bachelier en podologie-podothérapie en juin 2021 à la Haute Ecole Léonard de Vinci - Parnasse ISESI à Bruxelles. Je suis disponible pour vous afin d'évaluer vos besoins et de vous apporter des soins spécifiques selon votre demande.
               </p>
               <Link 
                 href="/prestations"
-                className="inline-flex items-center px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-all duration-300"
+                className="inline-flex items-center px-6 sm:px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-all duration-300"
               >
                 Découvrir mes prestations
               </Link>
@@ -152,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="py-24 bg-[#403737] text-[#EBE6E4]">
+      <section className="py-16 md:py-24 bg-[#403737] text-[#EBE6E4]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div 
             initial="initial"
@@ -162,28 +163,28 @@ export default function Home() {
               initial: { opacity: 0 },
               animate: { opacity: 1, transition: { staggerChildren: 0.2 } }
             }}
-            className="grid md:grid-cols-2 gap-16 items-start"
+            className="grid md:grid-cols-2 gap-8 md:gap-16 items-start"
           >
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               <motion.div variants={fadeIn}>
-                <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Horaires</h3>
-                <p className="font-light">
+                <h3 className="text-sm uppercase tracking-wider mb-3 md:mb-4 text-white/70">Horaires</h3>
+                <p className="font-light text-base md:text-lg">
                   Lun-Ven: 9h-19h<br />
                   Sam: 9h-12h
                 </p>
               </motion.div>
               
               <motion.div variants={fadeIn}>
-                <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Contact</h3>
-                <p className="font-light">
+                <h3 className="text-sm uppercase tracking-wider mb-3 md:mb-4 text-white/70">Contact</h3>
+                <p className="font-light text-base md:text-lg">
                   +32493938982<br />
                   leonardi.podo@gmail.com
                 </p>
               </motion.div>
               
               <motion.div variants={fadeIn}>
-                <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Adresse</h3>
-                <p className="font-light">
+                <h3 className="text-sm uppercase tracking-wider mb-3 md:mb-4 text-white/70">Adresse</h3>
+                <p className="font-light text-base md:text-lg">
                   Rue Docteur Colson 23, 1430 Quenast<br />
                   Chaussée de Bruxelles 475, 7850 Enghien
                 </p>

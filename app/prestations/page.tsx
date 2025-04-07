@@ -78,18 +78,18 @@ export default function Prestations() {
   return (
     <main className="min-h-screen bg-[#EBE6E4]/10">
       {/* Header */}
-      <section className="py-24 bg-[#403737]">
+      <section className="py-16 md:py-24 bg-[#403737]">
         <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-light tracking-widest uppercase text-center text-[#EBE6E4]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-widest uppercase text-center text-[#EBE6E4]">
             Prestations
           </h1>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
             {services.map((service) => (
               <motion.div
                 key={service.id}
@@ -105,16 +105,16 @@ export default function Prestations() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#403737]/80 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
                     <motion.h2
                       layoutId={`title-${service.id}`}
-                      className="text-2xl font-light tracking-wider mb-2"
+                      className="text-xl md:text-2xl font-light tracking-wider mb-2"
                     >
                       {service.title}
                     </motion.h2>
                     <motion.p
                       layoutId={`shortDesc-${service.id}`}
-                      className="text-sm text-[#EBE6E4]/80"
+                      className="text-sm md:text-base text-[#EBE6E4]/80"
                     >
                       {service.shortDesc}
                     </motion.p>
@@ -168,16 +168,16 @@ export default function Prestations() {
                   />
                 </motion.div>
 
-                <div className="p-8 md:p-12">
+                <div className="p-6 md:p-12">
                   <motion.h2
                     layoutId={`title-${selectedService.id}`}
-                    className="text-3xl font-light tracking-wider text-[#403737] mb-4"
+                    className="text-2xl md:text-3xl font-light tracking-wider text-[#403737] mb-3 md:mb-4"
                   >
                     {selectedService.title}
                   </motion.h2>
                   <motion.p
                     layoutId={`shortDesc-${selectedService.id}`}
-                    className="text-lg text-[#403737]/70 mb-6"
+                    className="text-base md:text-lg text-[#403737]/70 mb-4 md:mb-6"
                   >
                     {selectedService.shortDesc}
                   </motion.p>
@@ -187,17 +187,17 @@ export default function Prestations() {
                     transition={{ delay: 0.2 }}
                     className="space-y-6"
                   >
-                    <div className="prose text-[#403737]/80 whitespace-pre-line">
+                    <div className="prose text-sm md:text-base text-[#403737]/80 whitespace-pre-line">
                       {selectedService.description}
                     </div>
-                    <div className="pt-6 border-t border-[#403737]/10">
-                      <p className="text-lg font-light text-[#403737]">
+                    <div className="pt-4 md:pt-6 border-t border-[#403737]/10">
+                      <p className="text-base md:text-lg font-light text-[#403737]">
                         {selectedService.price}
                       </p>
                     </div>
                     <button
                       onClick={() => window.open('https://rosa.be/fr/hp/justine-leonardi/', '_blank')}
-                      className="w-full px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-colors"
+                      className="w-full px-6 sm:px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-colors"
                     >
                       Prendre rendez-vous
                     </button>
