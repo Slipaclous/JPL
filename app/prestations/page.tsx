@@ -12,6 +12,7 @@ interface Service {
   description: string;
   image: string;
   price: string;
+  detailedDescription: string;
 }
 
 const services: Service[] = [
@@ -28,7 +29,15 @@ const services: Service[] = [
     • Soins spécifiques pour diabétiques
     • Service de soins à domicile`,
     image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80",
-    price: "À partir de 35€"
+    price: "À partir de 35€",
+    detailedDescription: `Notre gamme complète de soins des pieds comprend :
+    • Soin classique
+    • Traitement des ongles incarnés
+    • Traitement des verrues
+    • Traitement des mycoses
+    • Soin des cors
+    • Soins spécifiques pour diabétiques
+    • Service de soins à domicile`
   },
   {
     id: 'orthoplastie',
@@ -41,7 +50,13 @@ const services: Service[] = [
     • Protection des zones de friction
     • Solutions pour les déformations des orteils`,
     image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
-    price: "Sur devis"
+    price: "Sur devis",
+    detailedDescription: `Nos services d'orthoplastie incluent :
+    • Orthoplastie sur mesure
+    • Orthonyxie pour les ongles déformés
+    • Onychoplastie pour la reconstruction d'ongles
+    • Protection des zones de friction
+    • Solutions pour les déformations des orteils`
   },
   {
     id: 'analyse-biomecanique',
@@ -55,7 +70,14 @@ const services: Service[] = [
     • Recommandations personnalisées
     • Suivi et ajustements`,
     image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
-    price: "75€"
+    price: "75€",
+    detailedDescription: `Notre analyse biomécanique comprend :
+    • Analyse complète de la marche
+    • Étude de la course
+    • Analyse de la statique
+    • Évaluation posturale
+    • Recommandations personnalisées
+    • Suivi et ajustements`
   },
   {
     id: 'semelles',
@@ -69,7 +91,14 @@ const services: Service[] = [
     • Compatible avec la plupart des chaussures
     • Garantie de confort`,
     image: "https://images.unsplash.com/photo-1515191107209-c28698631303?ixlib=rb-4.0.3&auto=format&fit=crop&w=928&q=80",
-    price: "À partir de 150€"
+    price: "À partir de 150€",
+    detailedDescription: `Nos semelles orthopédiques sur mesure :
+    • Conception assistée par ordinateur
+    • Fabrication en usinage 3D
+    • Adaptées à vos besoins spécifiques
+    • Suivi et ajustements
+    • Compatible avec la plupart des chaussures
+    • Garantie de confort`
   }
 ];
 
@@ -175,11 +204,11 @@ export default function Prestations() {
                   {selectedService.shortDesc}
                 </p>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base text-[#403737]/60">
-                    {selectedService.description}
+                  <p className="text-sm md:text-base text-[#403737]/60 whitespace-pre-line">
+                    {selectedService.detailedDescription}
                   </p>
                   <p className="text-base md:text-lg font-light text-[#403737]">
-                    {selectedService.price}
+                    À partir de {selectedService.price}
                   </p>
                 </div>
                 <Link 
