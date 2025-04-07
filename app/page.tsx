@@ -123,7 +123,7 @@ export default function Home() {
             >
               <div className="aspect-[3/4] relative z-10 overflow-hidden">
                 <img 
-                  src="/img/justine.jpg"
+                  src="/img/justine.JPG"
                   alt="Justine Leonardi"
                   className="w-full h-full object-cover"
                 />
