@@ -56,56 +56,24 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div 
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={{
-              initial: { opacity: 0 },
-              animate: { opacity: 1, transition: { staggerChildren: 0.2 } }
-            }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+            transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            {[
-              {
-                title: "Soin des pieds",
-                description: "Soins classiques et spécifiques adaptés à vos besoins",
-                image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
-              },
-              {
-                title: "Orthoplastie",
-                description: "Protection et correction des orteils sur mesure",
-                image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
-              },
-              {
-                title: "Analyse biomécanique",
-                description: "Étude complète de votre démarche et posture",
-                image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
-              },
-              {
-                title: "Semelles podologiques",
-                description: "Semelles personnalisées réalisées en 3D",
-                image: "https://images.unsplash.com/photo-1515191107209-c28698631303?ixlib=rb-4.0.3&auto=format&fit=crop&w=928&q=80"
-              }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                className="group cursor-pointer relative"
-                onClick={() => window.location.href = '/prestations'}
-              >
-                <div className="aspect-[4/3] mb-4 md:mb-6 overflow-hidden bg-[#EBE6E4]/20">
-                  <img 
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-base md:text-lg font-light tracking-wider mb-2 text-[#403737] group-hover:text-[#403737]/80 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-[#403737]/60">{service.description}</p>
-              </motion.div>
-            ))}
+            <h2 className="text-2xl md:text-3xl font-light tracking-wider mb-6 text-[#403737]">
+              Découvrez mes prestations
+            </h2>
+            <p className="text-base md:text-lg text-[#403737]/70 mb-8 max-w-2xl mx-auto">
+              Des soins personnalisés adaptés à vos besoins, de la pédicurie à l'orthoplastie
+            </p>
+            <Link 
+              href="/prestations"
+              className="inline-flex items-center px-8 py-4 bg-[#403737] text-[#EBE6E4] text-base uppercase tracking-widest hover:bg-[#403737]/90 transition-all duration-300"
+            >
+              Voir toutes les prestations
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -204,6 +172,45 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-[#403737] text-[#EBE6E4] py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div className="text-center md:text-left">
+              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Cabinet de Podologie</h3>
+              <p className="font-light text-sm md:text-base">
+                Justine Leonardi<br />
+                Podologue diplômée
+              </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Liens rapides</h3>
+              <div className="space-y-2">
+                <Link href="/" className="block text-sm md:text-base hover:text-white/80 transition-colors">Accueil</Link>
+                <Link href="/prestations" className="block text-sm md:text-base hover:text-white/80 transition-colors">Prestations</Link>
+                <Link href="https://rosa.be/fr/hp/justine-leonardi/" target="_blank" className="block text-sm md:text-base hover:text-white/80 transition-colors">Prendre RDV</Link>
+              </div>
+            </div>
+            <div className="text-center md:text-right">
+              <h3 className="text-sm uppercase tracking-wider mb-4 text-white/70">Suivez-moi</h3>
+              <div className="flex justify-center md:justify-end space-x-4">
+                <a href="https://www.instagram.com/justineleonardi.podo/" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base hover:text-white/80 transition-colors">
+                  Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063517123456" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base hover:text-white/80 transition-colors">
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+            <p className="text-sm text-white/60">
+              © {new Date().getFullYear()} Justine Leonardi - Tous droits réservés
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

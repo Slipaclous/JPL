@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface Service {
   id: string;
@@ -134,80 +135,65 @@ export default function Prestations() {
         </div>
       </section>
 
-      {/* Service Detail Modal */}
-      <AnimatePresence>
-        {selectedService && (
+      {/* Modal */}
+      {selectedService && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={() => setSelectedService(null)}
+        >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
-            onClick={() => setSelectedService(null)}
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            className="relative w-full max-w-4xl bg-white rounded-lg overflow-hidden"
+            onClick={e => e.stopPropagation()}
           >
-            <motion.div
-              layoutId={`card-${selectedService.id}`}
-              className="relative w-full max-w-4xl bg-white overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
+            <button
+              onClick={() => setSelectedService(null)}
+              className="absolute top-4 right-4 z-10 text-[#403737] hover:text-[#403737]/80 transition-colors"
             >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 z-10 p-2 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-
-              <div className="grid md:grid-cols-2">
-                <motion.div
-                  layoutId={`image-${selectedService.id}`}
-                  className="aspect-square md:aspect-auto relative"
-                >
-                  <img
-                    src={selectedService.image}
-                    alt={selectedService.title}
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                <div className="p-6 md:p-12">
-                  <motion.h2
-                    layoutId={`title-${selectedService.id}`}
-                    className="text-2xl md:text-3xl font-light tracking-wider text-[#403737] mb-3 md:mb-4"
-                  >
-                    {selectedService.title}
-                  </motion.h2>
-                  <motion.p
-                    layoutId={`shortDesc-${selectedService.id}`}
-                    className="text-base md:text-lg text-[#403737]/70 mb-4 md:mb-6"
-                  >
-                    {selectedService.shortDesc}
-                  </motion.p>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="space-y-6"
-                  >
-                    <div className="prose text-sm md:text-base text-[#403737]/80 whitespace-pre-line">
-                      {selectedService.description}
-                    </div>
-                    <div className="pt-4 md:pt-6 border-t border-[#403737]/10">
-                      <p className="text-base md:text-lg font-light text-[#403737]">
-                        {selectedService.price}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => window.open('https://rosa.be/fr/hp/justine-leonardi/', '_blank')}
-                      className="w-full px-6 sm:px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-colors"
-                    >
-                      Prendre rendez-vous
-                    </button>
-                  </motion.div>
-                </div>
+              <X size={24} />
+            </button>
+            
+            <div className="grid md:grid-cols-2">
+              <div className="aspect-[4/3] md:aspect-auto md:h-full">
+                <img 
+                  src={selectedService.image}
+                  alt={selectedService.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </motion.div>
+              
+              <div className="p-6 md:p-8 space-y-6">
+                <h3 className="text-xl md:text-2xl font-light tracking-wider text-[#403737]">
+                  {selectedService.title}
+                </h3>
+                <p className="text-base md:text-lg text-[#403737]/70">
+                  {selectedService.shortDesc}
+                </p>
+                <div className="space-y-4">
+                  <p className="text-sm md:text-base text-[#403737]/60">
+                    {selectedService.description}
+                  </p>
+                  <p className="text-base md:text-lg font-light text-[#403737]">
+                    {selectedService.price}
+                  </p>
+                </div>
+                <Link 
+                  href="https://rosa.be/fr/hp/justine-leonardi/"
+                  target="_blank"
+                  className="inline-flex items-center px-6 sm:px-8 py-3 bg-[#403737] text-[#EBE6E4] text-sm uppercase tracking-widest hover:bg-[#403737]/90 transition-all duration-300"
+                >
+                  Prendre RDV
+                </Link>
+              </div>
+            </div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </motion.div>
+      )}
     </main>
   );
 }
