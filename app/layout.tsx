@@ -57,9 +57,11 @@ export default function RootLayout({
                   Horaires
                 </h3>
                 <div className="space-y-2 text-white/80">
-                  <p>Lundi - Vendredi : 9h-19h</p>
-                  <p>Samedi : 9h-12h</p>
-                  <p>Dimanche : Fermé</p>
+                  <p>Lundi : 8h00 - 14h00</p>
+                  <p>Mardi : 14h30 - 20h30</p>
+                  <p>Mercredi : 14h00 - 18h00</p>
+                  <p>Jeudi : X</p>
+                  <p>Vendredi : 14h00 - 18h00</p>
                 </div>
               </div>
 

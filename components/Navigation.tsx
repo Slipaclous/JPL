@@ -58,9 +58,6 @@ export default function Navigation() {
               <Link href="/prestations" className="nav-link">
                 Prestations
               </Link>
-              <Link href="/contact" className="nav-link">
-                Contact
-              </Link>
               <Link 
                 href="https://rosa.be/fr/hp/justine-leonardi/" 
                 target="_blank"
@@ -122,9 +119,6 @@ export default function Navigation() {
             </Link>
             <Link href="/prestations" className="nav-link text-lg" onClick={toggleSidebar}>
               Prestations
-            </Link>
-            <Link href="/contact" className="nav-link text-lg" onClick={toggleSidebar}>
-              Contact
             </Link>
             <div className="pt-8 mt-auto border-t border-border/30">
               <Link 
