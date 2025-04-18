@@ -61,11 +61,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center bg-primary hover:bg-primary/90 text-white px-8 py-3 text-sm uppercase tracking-widest font-light transition-all duration-300 transform hover:scale-105;
+    @apply inline-flex items-center bg-primary hover:bg-primary/90 text-white px-8 py-3 text-sm uppercase tracking-widest font-light transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/20;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center bg-white hover:bg-primary/5 text-primary border border-primary/20 px-8 py-3 text-sm uppercase tracking-widest font-light transition-all duration-300 transform hover:scale-105;
+    @apply inline-flex items-center bg-white hover:bg-primary/5 text-primary border border-primary/20 px-8 py-3 text-sm uppercase tracking-widest font-light transition-all duration-300 transform hover:scale-105 hover:shadow-md;
   }
 
   .footer-link {
@@ -77,10 +77,22 @@
   }
 
   .section-title {
-    @apply text-2xl font-light tracking-widest uppercase mb-12 text-center;
+    @apply text-2xl font-light tracking-widest uppercase mb-12 text-center relative after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-[1px] after:bg-primary/20;
   }
 
   .card-elegant {
     @apply bg-white/70 backdrop-blur-sm border-0 shadow-sm hover:shadow-md transition-all duration-500;
+  }
+
+  .image-hover {
+    @apply transition-transform duration-500 hover:scale-105;
+  }
+
+  .section-divider {
+    @apply relative py-16 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-primary/20 before:to-transparent;
+  }
+
+  .heading-accent {
+    @apply relative inline-block after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-primary/20;
   }
 }

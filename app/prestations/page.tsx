@@ -28,7 +28,7 @@ const services: Service[] = [
     • Soin des cors
     • Soins spécifiques pour diabétiques
     • Service de soins à domicile`,
-    image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80",
+    image: "/img/Soin des pieds.jpg",
     price: "À partir de 35€",
     detailedDescription: `Notre gamme complète de soins des pieds comprend :
     • Soin classique
@@ -69,7 +69,7 @@ const services: Service[] = [
     • Évaluation posturale
     • Recommandations personnalisées
     • Suivi et ajustements`,
-    image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "/img/analyse_biomecanique.jpg",
     price: "75€",
     detailedDescription: `Notre analyse biomécanique comprend :
     • Analyse complète de la marche
