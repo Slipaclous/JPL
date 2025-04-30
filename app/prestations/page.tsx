@@ -20,85 +20,37 @@ const services: Service[] = [
     id: 'soin-pieds',
     title: "Soin des pieds",
     shortDesc: "Soins classiques et spécifiques",
-    description: `Notre gamme complète de soins des pieds comprend :
-    • Soin classique
-    • Traitement des ongles incarnés
-    • Traitement des verrues
-    • Traitement des mycoses
-    • Soin des cors
-    • Soins spécifiques pour diabétiques
-    • Service de soins à domicile`,
+    description: `Soin classique\nTraitement des ongles incarnés\nTraitement des verrues\nTraitement des mycoses\nTraitement des cors\nSoins pour diabétique\nSoins à domicile`,
     image: "/img/Soin des pieds.jpg",
-    price: "À partir de 35€",
-    detailedDescription: `Notre gamme complète de soins des pieds comprend :
-    • Soin classique
-    • Traitement des ongles incarnés
-    • Traitement des verrues
-    • Traitement des mycoses
-    • Soin des cors
-    • Soins spécifiques pour diabétiques
-    • Service de soins à domicile`
+    price: "",
+    detailedDescription: `Soin classique\nTraitement des ongles incarnés\nTraitement des verrues\nTraitement des mycoses\nTraitement des cors\nSoins pour diabétique\nSoins à domicile`
   },
   {
     id: 'orthoplastie',
-    title: "Orthoplastie",
+    title: "Orthoplastie / Orthonyxie / Onychoplastie",
     shortDesc: "Correction et protection des orteils",
-    description: `Nos services d'orthoplastie incluent :
-    • Orthoplastie sur mesure
-    • Orthonyxie pour les ongles déformés
-    • Onychoplastie pour la reconstruction d'ongles
-    • Protection des zones de friction
-    • Solutions pour les déformations des orteils`,
+    description: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`,
     image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
-    price: "Sur devis",
-    detailedDescription: `Nos services d'orthoplastie incluent :
-    • Orthoplastie sur mesure
-    • Orthonyxie pour les ongles déformés
-    • Onychoplastie pour la reconstruction d'ongles
-    • Protection des zones de friction
-    • Solutions pour les déformations des orteils`
+    price: "",
+    detailedDescription: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`
   },
   {
     id: 'analyse-biomecanique',
     title: "Analyse biomécanique",
-    shortDesc: "Étude complète de la marche",
-    description: `Notre analyse biomécanique comprend :
-    • Analyse complète de la marche
-    • Étude de la course
-    • Analyse de la statique
-    • Évaluation posturale
-    • Recommandations personnalisées
-    • Suivi et ajustements`,
+    shortDesc: "Étude complète de la marche et de la posture",
+    description: `Analyse de la marche et de la course\nAnalyse de la posture\nConseils personnalisés`,
     image: "/img/analyse_biomecanique.jpg",
-    price: "75€",
-    detailedDescription: `Notre analyse biomécanique comprend :
-    • Analyse complète de la marche
-    • Étude de la course
-    • Analyse de la statique
-    • Évaluation posturale
-    • Recommandations personnalisées
-    • Suivi et ajustements`
+    price: "",
+    detailedDescription: `Analyse de la marche et de la course\nAnalyse de la posture\nConseils personnalisés`
   },
   {
     id: 'semelles',
     title: "Semelles podologiques",
     shortDesc: "Semelles personnalisées 3D",
-    description: `Nos semelles orthopédiques sur mesure :
-    • Conception assistée par ordinateur
-    • Fabrication en usinage 3D
-    • Adaptées à vos besoins spécifiques
-    • Suivi et ajustements
-    • Compatible avec la plupart des chaussures
-    • Garantie de confort`,
+    description: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`,
     image: "https://images.unsplash.com/photo-1515191107209-c28698631303?ixlib=rb-4.0.3&auto=format&fit=crop&w=928&q=80",
-    price: "À partir de 150€",
-    detailedDescription: `Nos semelles orthopédiques sur mesure :
-    • Conception assistée par ordinateur
-    • Fabrication en usinage 3D
-    • Adaptées à vos besoins spécifiques
-    • Suivi et ajustements
-    • Compatible avec la plupart des chaussures
-    • Garantie de confort`
+    price: "",
+    detailedDescription: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`
   }
 ];
 
@@ -200,15 +152,9 @@ export default function Prestations() {
                 <h3 className="text-xl md:text-2xl font-light tracking-wider text-[#403737]">
                   {selectedService.title}
                 </h3>
-                <p className="text-base md:text-lg text-[#403737]/70">
-                  {selectedService.shortDesc}
-                </p>
                 <div className="space-y-4">
                   <p className="text-sm md:text-base text-[#403737]/60 whitespace-pre-line">
                     {selectedService.detailedDescription}
-                  </p>
-                  <p className="text-base md:text-lg font-light text-[#403737]">
-                    À partir de {selectedService.price}
                   </p>
                 </div>
                 <Link 
