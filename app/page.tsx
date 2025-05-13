@@ -67,7 +67,7 @@ export default function Home() {
               Découvrez mes prestations
             </h2>
             <p className="text-base md:text-lg text-[#403737]/70 mb-8 max-w-2xl mx-auto">
-              Des soins personnalisés adaptés à vos besoins,des soins au semelles
+              Des soins personnalisés adaptés à vos besoins, des soins au semelles
             </p>
             <Link 
               href="/prestations"

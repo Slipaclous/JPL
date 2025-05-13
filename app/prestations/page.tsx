@@ -30,7 +30,7 @@ const services: Service[] = [
     title: "Orthoplastie / Orthonyxie / Onychoplastie",
     shortDesc: "Correction et protection des orteils",
     description: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`,
-    image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "/img/foot-care.jpg",
     price: "",
     detailedDescription: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`
   },
@@ -48,7 +48,7 @@ const services: Service[] = [
     title: "Semelles podologiques",
     shortDesc: "Semelles personnalisées 3D",
     description: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`,
-    image: "https://images.unsplash.com/photo-1515191107209-c28698631303?ixlib=rb-4.0.3&auto=format&fit=crop&w=928&q=80",
+    image: "/img/Semelle.jpg",
     price: "",
     detailedDescription: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`
   }

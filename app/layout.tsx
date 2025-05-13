@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <head>
+        <link rel="icon" href="/img/JPL.jpg" />
+      </head>
       <body className={inter.className}>
         <header className="border-b sticky top-0 bg-background/95 backdrop-blur-sm z-50">
           <Navigation />
