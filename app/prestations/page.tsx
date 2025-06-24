@@ -9,10 +9,10 @@ interface Service {
   id: string;
   title: string;
   shortDesc: string;
-  description: string;
+  description: string[];
   image: string;
   price: string;
-  detailedDescription: string;
+  detailedDescription: string[];
 }
 
 const services: Service[] = [
@@ -20,37 +20,81 @@ const services: Service[] = [
     id: 'soin-pieds',
     title: "Soin des pieds",
     shortDesc: "Soins classiques et spécifiques",
-    description: `Soin classique\nTraitement des ongles incarnés\nTraitement des verrues\nTraitement des mycoses\nTraitement des cors\nSoins pour diabétique\nSoins à domicile`,
+    description: [
+      "Soin classique",
+      "Traitement des ongles incarnés",
+      "Traitement des verrues",
+      "Traitement des mycoses",
+      "Traitement des cors",
+      "Soins pour diabétique",
+      "Soins à domicile"
+    ],
     image: "/img/Soin des pieds.jpg",
     price: "",
-    detailedDescription: `Soin classique\nTraitement des ongles incarnés\nTraitement des verrues\nTraitement des mycoses\nTraitement des cors\nSoins pour diabétique\nSoins à domicile`
+    detailedDescription: [
+      "Soin classique",
+      "Traitement des ongles incarnés",
+      "Traitement des verrues",
+      "Traitement des mycoses",
+      "Traitement des cors",
+      "Soins pour diabétique",
+      "Soins à domicile"
+    ]
   },
   {
     id: 'orthoplastie',
     title: "Orthoplastie / Orthonyxie / Onychoplastie",
     shortDesc: "Correction et protection des orteils",
-    description: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`,
+    description: [
+      "Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils",
+      "Orthonyxie va avoir pour but de corriger la courbure de l'ongle",
+      "Onychoplastie est une technique de reconstruction de l'ongle"
+    ],
     image: "/img/foot-care.jpg",
     price: "",
-    detailedDescription: `Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils\nOrthonyxie va avoir pour but de corriger la courbure de l'ongle\nOnychoplastie est une technique de reconstruction de l'ongle`
+    detailedDescription: [
+      "Orthoplastie est un moulage en silicone visant à protéger ou corriger la position des orteils",
+      "Orthonyxie va avoir pour but de corriger la courbure de l'ongle",
+      "Onychoplastie est une technique de reconstruction de l'ongle"
+    ]
   },
   {
     id: 'analyse-biomecanique',
     title: "Analyse biomécanique",
     shortDesc: "Étude complète de la marche et de la posture",
-    description: `Analyse de la marche et de la course\nAnalyse de la posture\nConseils personnalisés`,
+    description: [
+      "Analyse de la marche et de la course",
+      "Analyse de la posture",
+      "Conseils personnalisés"
+    ],
     image: "/img/analyse_biomecanique.jpg",
     price: "",
-    detailedDescription: `Analyse de la marche et de la course\nAnalyse de la posture\nConseils personnalisés`
+    detailedDescription: [
+      "Analyse de la marche et de la course",
+      "Analyse de la posture",
+      "Conseils personnalisés"
+    ]
   },
   {
     id: 'semelles',
     title: "Semelles podologiques",
     shortDesc: "Semelles personnalisées 3D",
-    description: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`,
+    description: [
+      "Confection des semelles sur base de l'analyse biomécanique réalisée",
+      "Conception par ordinateur",
+      "Usinage 3D",
+      "Adaptées en fonction de vos besoin",
+      "Suivi et ajustement"
+    ],
     image: "/img/Semelle.jpg",
     price: "",
-    detailedDescription: `Confection des semelles sur base de l'analyse biomécanique réalisée\nConception par ordinateur\nUsinage 3D\nAdaptées en fonction de vos besoin\nSuivi et ajustement`
+    detailedDescription: [
+      "Confection des semelles sur base de l'analyse biomécanique réalisée",
+      "Conception par ordinateur",
+      "Usinage 3D",
+      "Adaptées en fonction de vos besoins",
+      "Suivi et ajustement"
+    ]
   }
 ];
 
@@ -153,9 +197,14 @@ export default function Prestations() {
                   {selectedService.title}
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base text-[#403737]/60 whitespace-pre-line">
-                    {selectedService.detailedDescription}
-                  </p>
+                  <ul className="space-y-2">
+                    {selectedService.detailedDescription.map((item, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="w-2 h-2 bg-[#403737] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="text-sm md:text-base text-[#403737]/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <Link 
                   href="https://rosa.be/fr/hp/justine-leonardi/"

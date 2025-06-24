@@ -159,17 +159,14 @@ export default function Home() {
                       Réservez votre consultation
                     </h3>
                     <p className="text-[#403737]/70">
-                      Choisissez votre créneau et je vous confirmerai votre rendez-vous dans les plus brefs délais.
+                      Choisissez votre créneau et recevez un mail de confirmation.
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3 text-[#403737]/80">
                         <Calendar className="h-5 w-5" />
-                        <span>Consultations du lundi au samedi</span>
+                        <span>Consultations du lundi au vendredi</span>
                       </div>
-                      <div className="flex items-center space-x-3 text-[#403737]/80">
-                        <Clock className="h-5 w-5" />
-                        <span>Durée moyenne : 30-45 minutes</span>
-                      </div>
+                      
                     </div>
                     <Link 
                       href="https://rosa.be/fr/hp/justine-leonardi/"
